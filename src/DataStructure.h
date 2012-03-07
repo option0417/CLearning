@@ -15,7 +15,7 @@ typedef struct {
 }City;
 
 typedef struct {
-	City *ptr;
+	City *city;
 	unsigned short length;
 }Nodepath;
 

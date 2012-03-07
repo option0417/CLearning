@@ -11,13 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void initial();
+#include "CityMap.h"
 
 int main(void) {
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+
+	City **list = createMap();
+
+	printf("%s", list[3]->name);
+
+
 	return EXIT_SUCCESS;
-}
-
-void initial() {
-
 }
