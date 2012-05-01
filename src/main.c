@@ -16,26 +16,36 @@
 #include "Algorithms/SelectionSort.h"
 #include "Algorithms/InsertionSort.h"
 #include "Algorithms/QuickSort.h"
+#include "Algorithms/BTreeDFS.h"
 
-#define SIZE 100000000
+#define SIZE 100000
 
 int main(void) {
+	//Variables for mesure program performance
 	clock_t s, f;
-	int* list = getRandomList(SIZE);
-	//showList(list, SIZE);
 
+	int* list = getRandomList(SIZE);
+	showList(list, SIZE);
+
+	//Start record
 	s = getClock();
 	printf("Start Time : %ld\n", s);
+
+	//Algorithm Function
 	//bubbleSort(list, SIZE);
 	//selectionSort(list, SIZE);
 	//insertionSort(list, SIZE);
-	quickSort(list, 0, SIZE-1);
+	//quickSort(list, 0, SIZE-1);
+	//bTreeTrace(list, 20000, 1234);
+
+	//Finish record
 	f = getClock();
 	printf("End Time : %ld\n", f);
-	//system("pause");
-	//showList(list, SIZE);
-	printf("Program Execution Time : %ld", f - s);
 
+	showList(list, SIZE);
+
+	printf("Program Execution Time : %ld", f - s);
 	free(list);
+
 	return EXIT_SUCCESS;
 }

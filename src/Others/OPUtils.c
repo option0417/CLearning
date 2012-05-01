@@ -18,7 +18,7 @@ int* getRandomList(int _size) {
 
 	srand(time(NULL));
 	while (index < size) {
-		list[index++] = rand() % 100000 + 1;
+		list[index++] = rand() % 10000 + 1;
 	}
 
 	return list;
