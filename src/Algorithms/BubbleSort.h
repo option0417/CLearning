@@ -8,6 +8,6 @@
 #ifndef BUBBLESORT_H_
 #define BUBBLESORT_H_
 
-void bubbleSort(int *array, int size);
+void bubbleSort(int *list, int size);
 
 #endif /* BUBBLESORT_H_ */

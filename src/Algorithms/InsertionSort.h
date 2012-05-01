@@ -8,7 +8,7 @@
 #ifndef INSERTIONSORT_H_
 #define INSERTIONSORT_H_
 
-void insertionSort(int* array, int size);
+void insertionSort(int* list, int size);
 
 
 #endif /* INSERTIONSORT_H_ */

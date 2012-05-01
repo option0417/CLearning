@@ -6,16 +6,23 @@
  */
 #include "BubbleSort.h"
 
-void bubbleSort(int *array, int size) {
+void bubbleSort(int *list, int size) {
 	int i, j;
+	int flag = 0;
 
 	for (i = 0; i < size; i++) {
 		for (j = 0; j < size-i-1; j++) {
-			if (array[j] > array[j+1]) {
-				array[j] = array[j] ^ array[j+1];
-				array[j+1] = array[j] ^ array[j+1];
-				array[j] = array[j] ^ array[j+1];
+			if (list[j] > list[j+1]) {
+				list[j] = list[j] ^ list[j+1];
+				list[j+1] = list[j] ^ list[j+1];
+				list[j] = list[j] ^ list[j+1];
+				flag = 1;
 			}
+		}
+		if (!flag) {
+			return;
+		} else {
+			flag = 0;
 		}
 	}
 }

@@ -6,20 +6,20 @@
  */
 #include "SelectionSort.h"
 
-void selectionSort(int* array, int size) {
+void selectionSort(int* list, int size) {
 	int idx, i, j;
 
 	for (i = 0; i < size; i++) {
 		idx = i;
 		for (j = i+1; j < size; j++) {
-			if (array[idx] > array[j]) {
+			if (list[idx] > list[j]) {
 				idx = j;
 			}
 		}
 		if (i != idx) {
-			array[i] = array[i] ^ array[idx];
-			array[idx] = array[i] ^ array[idx];
-			array[i] = array[i] ^ array[idx];
+			list[i] = list[i] ^ list[idx];
+			list[idx] = list[i] ^ list[idx];
+			list[i] = list[i] ^ list[idx];
 		}
 	}
 }

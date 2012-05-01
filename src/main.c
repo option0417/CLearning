@@ -11,41 +11,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "Others/OPUtils.h"
 #include "Algorithms/BubbleSort.h"
 #include "Algorithms/SelectionSort.h"
 #include "Algorithms/InsertionSort.h"
+#include "Algorithms/QuickSort.h"
 
-#define SIZE 10
-int* getArray();
-void show(int* array, int size);
+#define SIZE 100000000
 
 int main(void) {
-	int* array = getArray();
+	clock_t s, f;
+	int* list = getRandomList(SIZE);
+	//showList(list, SIZE);
 
-	show(array, SIZE);
-	//bubbleSort(array, SIZE);
-	//selectionSort(array, SIZE);
-	insertionSort(array, SIZE);
-	show(array, SIZE);
+	s = getClock();
+	printf("Start Time : %ld\n", s);
+	//bubbleSort(list, SIZE);
+	//selectionSort(list, SIZE);
+	//insertionSort(list, SIZE);
+	quickSort(list, 0, SIZE-1);
+	f = getClock();
+	printf("End Time : %ld\n", f);
+	//system("pause");
+	//showList(list, SIZE);
+	printf("Program Execution Time : %ld", f - s);
 
-	free(array);
+	free(list);
 	return EXIT_SUCCESS;
-}
-
-int* getArray() {
-	srand(time(NULL));
-	int i = 0;
-	int* array = (int*)malloc(sizeof(int) * SIZE);
-
-	while(i < SIZE) {
-		array[i++] = rand() % 100 + 1 ;
-	}
-	return array;
-}
-
-void show(int* array, int size) {
-	int i = 0;
-	while(i < size) {
-		printf("%d ", array[i++]);
-	}printf("\n");
 }
