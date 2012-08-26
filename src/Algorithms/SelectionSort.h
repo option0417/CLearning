@@ -8,6 +8,8 @@
 #ifndef SELECTIONSORT_H_
 #define SELECTIONSORT_H_
 
-void selectionSort(int* list, int size);
+#include "common.h"
+
+void selectionSort(SortingObj* sortingObj);
 
 #endif /* SELECTIONSORT_H_ */

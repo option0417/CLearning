@@ -6,30 +6,35 @@
  */
 #include "QuickSort.h"
 
-void quickSort(int* list, int _left, int _right) {
-	if (_left < _right) {
-		int left = _left;
-		int right = _right+1;
-		int key = list[_left];
+void doSorting(unsigned int* elementList, int startIndex, int endIndex);
+
+void quickSort(SortingObj* sortingObj) {
+	unsigned int startIndex = 0;
+	doSorting(sortingObj->elementList, 0, sortingObj->size-1);
+}
+
+void doSorting(unsigned int* elementList, int startIndex, int endIndex) {
+	if (startIndex < endIndex) {
+		int left = startIndex;
+
+		// Avoid ignore the comparison of variables
+		int right = endIndex+1;
+		int key = elementList[startIndex];
 
 		while (left < right) {
-			while(list[++left] < key);
-			while(list[--right] > key);
+			while(left+1 <= endIndex && elementList[++left] < key);
+			while(right-1 >= startIndex && elementList[--right] > key);
 
-			//printf("Left: %d, Right: %d\n", left, right);
 			if (left < right) {
-				list[left] = list[left] ^ list[right];
-				list[right] = list[left] ^ list[right];
-				list[left] = list[left] ^ list[right];
+				exchange(&elementList[left], &elementList[right]);
 			}
 		}
-		if (_left != right) {
-			list[_left] = list[_left] ^ list[right];
-			list[right] = list[_left] ^ list[right];
-			list[_left] = list[_left] ^ list[right];
+
+		if (startIndex < right) {
+			exchange(&elementList[startIndex], &elementList[right]);
 		}
 
-		quickSort(list, _left, right-1);
-		quickSort(list, right+1, _right);
+		doSorting(elementList, startIndex, right-1);
+		doSorting(elementList, right+1, endIndex);
 	}
 }

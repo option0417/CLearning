@@ -6,20 +6,19 @@
  */
 #include "SelectionSort.h"
 
-void selectionSort(int* list, int size) {
-	int idx, i, j;
+void selectionSort(SortingObj* sortingObj) {
+	int tempIndex, baseIndex, compareIndex;
 
-	for (i = 0; i < size; i++) {
-		idx = i;
-		for (j = i+1; j < size; j++) {
-			if (list[idx] > list[j]) {
-				idx = j;
+	for (baseIndex = 0; baseIndex < sortingObj->size; baseIndex++) {
+		tempIndex = baseIndex;
+		for (compareIndex = baseIndex+1; compareIndex < sortingObj->size; compareIndex++) {
+			if (sortingObj->elementList[tempIndex] > sortingObj->elementList[compareIndex]) {
+				tempIndex = compareIndex;
 			}
 		}
-		if (i != idx) {
-			list[i] = list[i] ^ list[idx];
-			list[idx] = list[i] ^ list[idx];
-			list[i] = list[i] ^ list[idx];
+
+		if (baseIndex != tempIndex) {
+			exchange(&sortingObj->elementList[baseIndex], &sortingObj->elementList[tempIndex]);
 		}
 	}
 }

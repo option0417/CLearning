@@ -8,6 +8,8 @@
 #ifndef BUBBLESORT_H_
 #define BUBBLESORT_H_
 
-void bubbleSort(int *list, int size);
+#include "common.h"
+
+void bubbleSort(SortingObj* sortingObj);
 
 #endif /* BUBBLESORT_H_ */

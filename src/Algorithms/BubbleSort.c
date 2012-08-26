@@ -6,23 +6,38 @@
  */
 #include "BubbleSort.h"
 
-void bubbleSort(int *list, int size) {
-	int i, j;
-	int flag = 0;
+int isNeedExchange(unsigned int* currValue, unsigned int* nextValue);
+void changeStatus(int* status);
+int isEnd(int* status);
 
-	for (i = 0; i < size; i++) {
-		for (j = 0; j < size-i-1; j++) {
-			if (list[j] > list[j+1]) {
-				list[j] = list[j] ^ list[j+1];
-				list[j+1] = list[j] ^ list[j+1];
-				list[j] = list[j] ^ list[j+1];
-				flag = 1;
+void bubbleSort(SortingObj* sortingObj) {
+	int baseIndex, compareIndex;
+	int status = 0;
+
+	for (baseIndex = 0; baseIndex < sortingObj->size; baseIndex++) {
+		for (compareIndex = 0; compareIndex < sortingObj->size-baseIndex-1; compareIndex++) {
+			if (isNeedExchange(&sortingObj->elementList[compareIndex], &sortingObj->elementList[compareIndex + 1])) {
+				exchange(&sortingObj->elementList[compareIndex], &sortingObj->elementList[compareIndex + 1]);
+				changeStatus(&status);
 			}
 		}
-		if (!flag) {
+
+		if (isEnd(&status)) {
 			return;
 		} else {
-			flag = 0;
+			changeStatus(&status);
 		}
 	}
+}
+
+int isNeedExchange(unsigned int* currValue, unsigned int* nextValue) {
+	return (*currValue > *nextValue);
+}
+
+void changeStatus(int* status) {
+	*status = 1;
+}
+
+int isEnd(int* status) {
+	return !(*status);
 }

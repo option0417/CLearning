@@ -8,7 +8,9 @@
 #ifndef INSERTIONSORT_H_
 #define INSERTIONSORT_H_
 
-void insertionSort(int* list, int size);
+#include "common.h"
+
+void insertionSort(SortingObj* sortingObj);
 
 
 #endif /* INSERTIONSORT_H_ */

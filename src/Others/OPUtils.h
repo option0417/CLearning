@@ -12,8 +12,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int* getRandomList(int _size);
-void showList(int* list, int size);
+unsigned int* getRandomList(int _size);
+void showList(unsigned int* list, int size);
 clock_t getClock();
 
 #endif /* OPUTILS_H_ */

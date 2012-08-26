@@ -8,6 +8,8 @@
 #ifndef QUICKSORT_H_
 #define QUICKSORT_H_
 
-void quickSort(int* list, int _left, int _right);
+#include "common.h"
+
+void quickSort(SortingObj* sortingObj);
 
 #endif /* QUICKSORT_H_ */

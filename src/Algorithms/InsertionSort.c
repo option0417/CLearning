@@ -6,18 +6,18 @@
  */
 #include "InsertionSort.h"
 
-void insertionSort(int* list, int size) {
-	int i, j, val;
+void insertionSort(SortingObj* sortingObj) {
+	int baseIndex, compareIndex, tempVal;
 
-	for (i = 1; i < size; i++) {
-		val = list[i];
-		for (j = i-1; j >= 0; j--) {
-			if (val < list[j]) {
-				list[j+1] = list[j];
+	for (baseIndex = 1; baseIndex < sortingObj->size; baseIndex++) {
+		tempVal = sortingObj->elementList[baseIndex];
+		for (compareIndex = baseIndex-1; compareIndex >= 0; compareIndex--) {
+			if (tempVal < sortingObj->elementList[compareIndex]) {
+				sortingObj->elementList[compareIndex+1] = sortingObj->elementList[compareIndex];
 			} else {
 				break;
 			}
 		}
-		list[j+1] = val;
+		sortingObj->elementList[compareIndex+1] = tempVal;
 	}
 }

@@ -6,25 +6,25 @@
  */
 #include "OPUtils.h"
 
-int* getRandomList(int _size) {
+unsigned int* getRandomList(int _size) {
 	int size = 10;
 	int index = 0;
-	int* list;
 
 	if (_size > 0) {
 		size = _size;
 	}
-	list = (int*)malloc(sizeof(int) * size);
+
+	unsigned int* list = (unsigned int*)malloc(sizeof(unsigned int) * size);
 
 	srand(time(NULL));
 	while (index < size) {
-		list[index++] = rand() % 10000 + 1;
+		list[index++] = rand() % size + 1;
 	}
 
 	return list;
 }
 
-void showList(int* list, int size) {
+void showList(unsigned int* list, int size) {
 	int index = 0;
 	while (index < size) {
 		printf("%d ", *(list+index++));
