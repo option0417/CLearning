@@ -12,11 +12,17 @@
 #include <stdlib.h>
 #include "Algorithms/Demo.h"
 #include "Problems/Knapsack.h"
+#include "Problems/PLATEAU.h"
 #include "Others/FileReader.h"
 
 
 int main(int argc, char* argv[]) {
 	//doDemo();
-	doKnapsack();
+	//doKnapsack();
+
+	int plateau[12] = {1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4};
+
+	showMaxLengthPlateau(plateau, 12);
+
 	return EXIT_SUCCESS;
 }
