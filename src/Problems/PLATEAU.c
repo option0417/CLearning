@@ -20,7 +20,6 @@ void showMaxLengthPlateau(int sortedArray[], int size) {
 			maxLength++;
 		}
 	}
-
 	printf("Max Length of Plateau : %d\n", maxLength);
 }
 

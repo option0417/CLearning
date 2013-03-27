@@ -22,7 +22,6 @@
 int main(int argc, char* argv[]) {
 	//doDemo();
 	//doKnapsack();
-
 	//int plateau[12] = {1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4};
 	//showMaxLengthPlateau(plateau, 12);
 
