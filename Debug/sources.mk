@@ -14,4 +14,8 @@ EXECUTABLES :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src \
+src/Problems \
+src/Others \
+src/DataStructure \
+src/Algorithms \
 
