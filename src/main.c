@@ -17,6 +17,7 @@
 #include "Problems/GT_COUNT.h"
 #include "Problems/EQ_COUNT.h"
 #include "Problems/MINDIST.h"
+#include "Problems/HEADTAIL.h"
 
 
 int main(int argc, char* argv[]) {
@@ -27,11 +28,11 @@ int main(int argc, char* argv[]) {
 
 	int f[5] = {10, 30, 50, 70, 90};
 	int g[5] = {13, 16, 20};
+	int h[7] = {3, 6, 2, 1, 4, 5, 2};
 	//printf("GT Count : %d", getGTCount(f, 5, g, 5));
-
 	//printf("EQ Count : %d", getEQCount(f, 5, g, 5));
-
-	printf("MinDist : %d", getMinDist(f, 5, g, 3));
+	//printf("MinDist : %d", getMinDist(f, 5, g, 3));
+	printf("HeadTail : %d", getHeadTail(h, 7));
 
 	return EXIT_SUCCESS;
 }
