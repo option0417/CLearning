@@ -9,8 +9,8 @@
 #define PRIORITYQUEUE_H_
 
 int* createPriorityQueue(int);
-void push(int*, int, int);
-int pop(int*, int);
+void add(int*, int, int);
+int read(int*, int);
 void destroy(int*);
 //int size(int*);
 

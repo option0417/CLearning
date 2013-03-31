@@ -13,7 +13,7 @@ int* createPriorityQueue(int size) {
 	return node;
 }
 
-void push(int* root, int size, int val) {
+void add(int* root, int size, int val) {
 	int cnt = -1;
 	int flag = 0;
 	while(++cnt < size) {
@@ -30,7 +30,7 @@ void push(int* root, int size, int val) {
 	if (!flag) printf("Queue Full\n");
 }
 
-int pop(int* root, int size) {
+int read(int* root, int size) {
 	return 0;
 }
 
