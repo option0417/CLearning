@@ -5,6 +5,7 @@
  *      Author: option0417
  */
 
+#include <stdlib.h>
 #include "I_SIEVE.h"
 
 int showPrimeWithISieve(int num) {
