@@ -1,12 +1,12 @@
 /*
- * I_SIEVE.c
+ * L_SIEVE.c
  *
  *  Created on: Apr 5, 2013
  *      Author: option0417
  */
 
 #include <stdlib.h>
-#include "I_SIEVE.h"
+#include "L_SIEVE.h"
 
 int showPrimeWithISieve(int num) {
 	if (num <= 2) {
