@@ -44,4 +44,5 @@ void showFactors(int num) {
 		printf("%2d(%d)", tmpFactor.prime, tmpFactor.count);
 	}
 	printf("\n");
+	free(factorArray);
 }
