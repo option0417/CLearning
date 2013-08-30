@@ -1,17 +1,4 @@
-#include <stdio.h>
-
-void reverse(char*, int);
-
-int main(int argc, char **argv)
-{
-	char str[6] = {'a', 'b', 'c', 'd', 'e', '\0'};
-	
-	printf("Orignal : %s\n", str);
-	reverse(str, 5);
-	printf("Reverse : %s\n", str);
-	
-	return 0;
-}
+#include "reverse.h"
 
 void reverse(char* str, int length) {
 	while (--length > 0) {
