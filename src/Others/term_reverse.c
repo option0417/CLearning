@@ -1,19 +1,6 @@
 
-#include <stdio.h>
-
-void term_reverse(char*, int);
-void reverse(char*, int);
-
-int main(int argc, char **argv)
-{
-	char str[15] = "This is a book";
-	
-	printf("Orignal : %s\n", str);
-	term_reverse(str, 14);	
-	printf("Reverse : %s\n", str);
-	
-	return 0;
-}
+#include "term_reverse.h"
+#include "reverse.h"
 
 void term_reverse(char* str, int length) {
 	reverse(str, length);	
@@ -25,14 +12,4 @@ void term_reverse(char* str, int length) {
 		str += (pt-str);
 	}
 	
-}
-
-void reverse(char* str, int length) {
-	while (--length > 0) {
-		(*str) ^= str[length];
-		str[length] ^= (*str);
-		(*str) ^= str[length];
-		str++;
-		length--;
-	}
 }
