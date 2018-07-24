@@ -1,4 +1,4 @@
-CLearning
+c-learning
 =========
 
-C Programming Learning
+Just learning for C Programming.

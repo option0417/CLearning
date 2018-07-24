@@ -32,7 +32,9 @@ int main(int argc, char* argv[]) {
 	//printf("GT Count : %d", getGTCount(f, 5, g, 5));
 	//printf("EQ Count : %d", getEQCount(f, 5, g, 5));
 	//printf("MinDist : %d", getMinDist(f, 5, g, 3));
-	printf("HeadTail : %d", getHeadTail(h, 7));
+	//printf("HeadTail : %d", getHeadTail(h, 7));
+
+	printf("Hello, World\n");
 
 	return EXIT_SUCCESS;
 }
