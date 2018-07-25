@@ -13,7 +13,7 @@
  * 1. May warnning since No "return", but most compiler not, Why?
  * Ans: 
  * 	After C99, reaching the } that terminates the main function returns a value of 0.
- * 	It's undefined behavior before C99.
+ * 	It's undefined behavior before C99, like C89.
  */
 int main(void) {
   printf("hello, world\n");
